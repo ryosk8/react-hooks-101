@@ -7,7 +7,12 @@ import Events from './Events';
 import AppContext from '../contexts/AppContext';
 import reducer from '../reducers'
 function App() {
-  const [state,dispatch] = useReducer(reducer,[])
+const initialState ={
+  events:[],
+  operaionLogs:[]
+}
+
+  const [state,dispatch] = useReducer(reducer,initialState)
   return (
     <AppContext.Provider value={{state,dispatch}}>
       <div className ="container-fluid">
